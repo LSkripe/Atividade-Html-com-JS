@@ -12,8 +12,10 @@ form.addEventListener('submit', function(e) {
 
     const numeroContaBeneficiario = document.getElementById('numero-conta');
     const valorDeposito = document.getElementById('valor-deposito');
-    const mensagemSucesso = 'Montante de: </b>${valorDepositado.value}</b> depositado para o cliente: </b>${nomeBeneficiario.value}<b/> - conta </b>${numeroContaBeneficiario}<b/>';
-
+    const mensagemSucesso = 'Montante de: </b>${valorDeposito.value}</b> depositado para o cliente: </b>${nomeBeneficiario.value}<b/> - conta </b>${numeroContaBeneficiario}<b/>';
+    // Linha 15 está com bug, o qual se colocar ´ ´ o comando não funciona a confirmação de envio.
+    // A limpeza do dos campos não está funcionando corertamente, sendo o campo de VALOR permanecendo a informação.
+        
     formEValido = validaNome(nomeBeneficiario.value)
     if (formEValido) {
         const containerMensagemSucesso = document.querySelector('.success-mensage');
